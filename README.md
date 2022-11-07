@@ -1,9 +1,5 @@
 # Pento
 
-## Sample Application for Programming Phoenix LiveView book
-
-## Phoenix boilerplate
-
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`

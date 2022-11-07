@@ -10,7 +10,7 @@ config :bcrypt_elixir, :log_rounds, 1
 # Run `mix help test` for more information.
 config :pento, Pento.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "password",
   hostname: "localhost",
   database: "pento_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
@@ -20,7 +20,7 @@ config :pento, Pento.Repo,
 # you can enable the server option below.
 config :pento, PentoWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "jZqPMev4VVobQm3IB0g+Ri2SVL2p/BvOessFSch5I1ItOEicNinld6o6HEkOlB6m",
+  secret_key_base: "on9HiECPamgvFiV2kTBEnpppd1/H24rIoFweMOFzCvEWXW64oivIXQUMgurICpz1",
   server: false
 
 # In test we don't send emails.

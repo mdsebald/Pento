@@ -3,7 +3,7 @@ import Config
 # Configure your database
 config :pento, Pento.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "password",
   hostname: "localhost",
   database: "pento_dev",
   stacktrace: true,
@@ -23,7 +23,7 @@ config :pento, PentoWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "W2EHuwuzxvDTg3DrTQltOedcp0RvUuHabkmP7DMbOy+DHcmoCSTim/u415pDHLFS",
+  secret_key_base: "uP8gCFs2aqvaxLRp6cuGD8w/GHVBJ/mPEEBviNmtCJOuTBy7egxq3OqTsn9ecmyH",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
