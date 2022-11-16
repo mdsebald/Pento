@@ -1,23 +1,35 @@
 defmodule PentoWeb.WrongLive do
   use Phoenix.LiveView, layout: {PentoWeb.LayoutView, "live.html"}
 
-  def mount(_params, _session, socket) do
-    {:ok, assign(socket, score: 0, message: "Make a guess:", answer: :rand.uniform(10))}
+  def mount(_params, session, socket) do
+    {:ok,
+     assign(socket,
+       score: 0,
+       message: "Guess a number: ",
+       session_id: session["live_socket_id"],
+       answer: :rand.uniform(10)
+     )}
   end
 
   def render(assigns) do
     ~H"""
     <h1>Your score: <%= @score %></h1>
     <h2>
-    <%= @message %>
-    <%= if String.contains?(@message, "Correct") do %>
-    <%= live_patch "Reset", to: nil %>
-    <% end %>
+      <%= @message %>
     </h2>
     <h2>
-    <%= for n <- 1..10 do %>
-    <a href="#" phx-click="guess" phx-value-number= {n} ><%= n %></a>
-    <% end %>
+      <%= if String.contains?(@message, "Correct") do %>
+      <%= live_patch "Reset", to: nil %>
+      <% end %>
+    </h2>
+    <h2>
+      <%= for n <- 1..10 do %>
+      <a href="#" phx-click="guess" phx-value-number= {n} ><%= n %></a>
+      <% end %>
+      <pre>
+        <%= @current_user.email %>
+        <%= @session_id %>
+      </pre>
     </h2>
     """
   end
